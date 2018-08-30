@@ -7,12 +7,13 @@ class Ride < ActiveRecord::Base
     if enough_tickets && tall_enough
       start_ride
     elsif tall_enough && !enough_tickets
-      "Sorry. You do not have enough tickets to ride the #{self.attraction.name}."
+      return "Sorry. You do not have enough tickets to ride the #{self.attraction.name}."
     elsif enough_tickets && !tall_enough
-      "Sorry. You are not tall enough to ride the #{self.attraction.name}."
+      return "Sorry. You are not tall enough to ride the #{self.attraction.name}."
     else
-      "Sorry. You do not have enough tickets to ride the #{self.attraction.name}. You are not tall enough to ride the #{self.attraction.name}."
+      return "Sorry. You do not have enough tickets to ride the #{self.attraction.name}. You are not tall enough to ride the #{self.attraction.name}."
     end
+    return "Thanks for riding the #{self.attraction.name}!"
   end
 
   def check_rider
@@ -24,7 +25,7 @@ class Ride < ActiveRecord::Base
     if self.user.height >= self.attraction.min_height
       tall_enough = true
     end
-    
+
     return [enough_tickets, tall_enough]
   end
 

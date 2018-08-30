@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get '/signin' => 'sessions#new'
   post '/sessions/create' => 'sessions#create'
   get '/signout' => 'sessions#destroy'
-  post 'rides/new' => 'rides#new'
+  post '/rides' => 'rides#new'
   resources :attractions
   resources :users
   post 'users/new' => 'users#create'

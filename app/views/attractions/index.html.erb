@@ -1,0 +1,10 @@
+<% if !!flash[:notice] %>
+<h3 class="center"><%= flash[:notice] %> </h3>
+<% end %>
+<ul>
+<% @attractions.each do |a| %>
+  <li>
+    <p><%= link_to ("Go on " + a.name), attraction_path(a) %></p>
+  </li>
+  <% end %>
+</ul>

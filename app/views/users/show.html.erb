@@ -1,5 +1,50 @@
-Name    :<%= @user.name %>
-Mood    :<%= @user.mood %>
-Height  :<%= @user.height %>
-Nausea  :<%= @user.nausea %>
-Tickets :<%= @user.tickets %>
+<% if !!flash[:notice] %>
+<h3 class="center"><%= flash[:notice] %> </h3>
+<% end %>
+
+<div class="center">
+
+  <div class="form-group">
+    <div class="form-control">
+    Name:<%= @user.name %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="form-control">
+      Mood: <%= @user.mood %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="form-control">
+      Height: <%= @user.height %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="form-control">
+      Nausea  :<%= @user.nausea %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="form-control">
+      Tickets: <%= @user.tickets %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="form-control">
+    ADMIN: <%= @user.admin %>
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <div class="form-control">
+      <%= link_to "See attractions", attractions_url %>
+    </div>
+  </div>
+
+</div>
