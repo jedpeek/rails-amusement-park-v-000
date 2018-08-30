@@ -1,10 +1,17 @@
 <% if !!flash[:notice] %>
 <h3 class="center"><%= flash[:notice] %> </h3>
 <% end %>
+
+<% if User.find(session[:user_id]).admin %>
+  <a href="/attractions/new">New Attraction</a>
+<% end %>
+
 <ul>
 <% @attractions.each do |a| %>
-  <li>
-    <p><%= link_to ("Go on " + a.name), attraction_path(a) %></p>
-  </li>
+    <% if User.find(session[:user_id]).admin %>
+      <li><%= link_to "Show #{a.name}", attraction_path(a) %></li>
+    <% else %>
+      <li><%= link_to "Go on #{a.name}", attraction_path(a) %></li>
+    <% end %>
   <% end %>
 </ul>

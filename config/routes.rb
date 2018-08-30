@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'attractions/new'
+  post 'attractions/new' => 'attractions#create'
   get 'attractions/create'
   get 'attractions/destroy'
   get 'attractions/show'

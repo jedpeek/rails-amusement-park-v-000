@@ -1,0 +1,25 @@
+<%= form_for @attraction do |f| %>
+<div class="form-group">
+  Name      : <%= f.text_field :name, class: "form-control" %><br />
+</div>
+
+<div class="form-group">
+  Tickets   : <%= f.text_field :tickets, class: "form-control" %><br />
+</div>
+
+<div class="form-group">
+  Happiness : <%= f.text_field :happiness_rating, class: "form-control" %><br />
+</div>
+
+<div class="form-group">
+  Nausea    : <%= f.text_field :nausea_rating, class: "form-control" %><br />
+</div>
+
+<div class="form-group">
+  Height    : <%= f.text_field :min_height, class: "form-control" %><br />
+</div>
+
+<div class="actions">
+  <%= f.submit class: "btn btn-primary" %>
+</div>
+<% end %>
