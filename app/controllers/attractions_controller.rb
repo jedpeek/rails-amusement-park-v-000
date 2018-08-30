@@ -24,7 +24,7 @@ class AttractionsController < ApplicationController
     @attraction = Attraction.find(params[:id])
     if @attraction.update(attraction_params)
       flash[:notice] = 'Attraction was successfully updated.'
-      redirect_to 'show'
+      redirect_to attraction_path(@attraction)
     else
     render 'edit'
   end
