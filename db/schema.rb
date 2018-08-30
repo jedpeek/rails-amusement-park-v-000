@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_30_161121) do
+ActiveRecord::Schema.define(version: 2018_08_30_174406) do
 
   create_table "attractions", force: :cascade do |t|
     t.string "name"
@@ -35,14 +35,13 @@ ActiveRecord::Schema.define(version: 2018_08_30_161121) do
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "password_digest"
-    t.string "nausea"
-    t.string "integer"
     t.integer "happiness"
     t.integer "tickets"
     t.integer "height"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "admin", default: false
+    t.integer "nausea"
   end
 
 end
