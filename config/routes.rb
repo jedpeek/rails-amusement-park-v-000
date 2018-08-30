@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'attractions/destroy'
   get 'attractions/show'
 
-  root 'users#home'
+  root 'static_pages#home'
 
   get '/signin' => 'sessions#new'
   post '/sessions/create' => 'sessions#create'
